@@ -10,11 +10,11 @@ export default function VotingComponent({ isModalOpen, setIsModalOpen }) {
   const [optionA, setOptionA] = useState("")
   const [optionB, setOptionB] = useState("")
 
-  const handleVote = (option) => {
+  const handleVote = (option: string) => {
     setVotes((prev) => ({ ...prev, [option]: prev[option] + 1 }))
   }
    
-  const handleImageUpload = (option, e) => {
+  const handleImageUpload = (option: string, e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files[0]
     if (file) {
       const reader = new FileReader()
@@ -93,7 +93,7 @@ export default function VotingComponent({ isModalOpen, setIsModalOpen }) {
                 취소
               </button>
             </div>
-          </div>
+          </div>  
         </div>
       )}
     </div>
