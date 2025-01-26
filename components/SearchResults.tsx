@@ -1,4 +1,10 @@
-export default function SearchResults({ results }) {
+type ResultType = {
+  id: number;
+  name: string;
+  // 다른 속성들...
+};
+
+export default function SearchResults({ results }: { results: ResultType[] }) {
   if (results.length === 0) return null
 
   return (
